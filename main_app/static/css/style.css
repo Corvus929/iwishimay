@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    margin: 2rem;
+}
+
+table {
+    margin: 2rem auto;
+}
+
+table button {
+    color: red;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+}
+
+table {
+    background-color: lightgrey;
+}

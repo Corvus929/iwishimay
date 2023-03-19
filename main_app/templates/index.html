@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Wish List Items</h1>
+
+<a class="pure-button" href="{% url 'create' %}">Add A Wish Item</a>
+<br> <br><br>
+    <table class="pure-table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        {% for item in items %}
+        <tr>
+        <td>{{ item.description }} </td>
+        <td><form action="{% url 'delete' item.id %}" method="POST" class="pure-form">
+            {% csrf_token %}
+            <button type="submit">X</button></form>
+        </td>
+        </tr>
+        {% empty %}
+        <h3>No Wish Items Exist</h3>
+        <hr>
+        {% endfor %}
+    </table>
+    <br>
+
+
+
+{% endblock %}
